@@ -22,19 +22,33 @@ function App() {
     },
     sideBar: {
       backgroundColor: "#a7d1b0",
-      border: "2px solid",
+      // border: "2px solid",
+      margin: "0",
+      padding: "0",
     },
     headShot: {
+      margin: "20px",
       width: "300px",
       borderRadius: "50%",
   },
+    blue: {
+      backgroundColor: "#5ab2c9",
+      marginBottom: "20px",
+    },
+    red: {
+      backgroundColor: "#d49384",
+      marginBottom: "20px",
+    },
+    rotate: {
+      transform: "rotate(-90deg)",
+    },
   }
 
   return (
     <Container maxwidth="lg">
       <Grid container>
         <Grid item lg={7}>
-          <AboutMe />
+          <AboutMe styles={styles}/>
           <Experience styles={styles} />
           <Education styles={styles} />
         </Grid>

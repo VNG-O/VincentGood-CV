@@ -1,4 +1,4 @@
-import { Container, Typography, Grid } from "@material-ui/core";
+import { Container, Typography, Grid, Box } from "@material-ui/core";
 
 const Experience = ({ styles }) => {
 
@@ -16,31 +16,33 @@ const Experience = ({ styles }) => {
     ]
 
     return (
-        <Container align="justify">
-            <Typography variant="h4" style={styles.break}>
-                Education
-            </Typography>
-            <Grid container>
-                {experience.map((item, index) => (
-                    <Grid container item key={index}>
-                        <Grid item lg={3}>
-                            <Typography variant="h5">
-                                {item.duration}
-                            </Typography>
+        <Box textAlign={{ xs: "center", md: "justify" }}>
+            <Container>
+                <Typography variant="h4" style={styles.break}>
+                    Education
+                </Typography>
+                <Grid container>
+                    {experience.map((item, index) => (
+                        <Grid container item key={index}>
+                            <Grid item xs={12} lg={3}>
+                                <Typography variant="h5">
+                                    {item.duration}
+                                </Typography>
+                            </Grid>
+                            <Box style={styles.colSeperator} display={{ xs: 'none', md: 'block' }} />
+                            <Grid item xs={12} lg={8}>
+                                <Typography variant="h6" style={styles.bold}>
+                                    {item.levelOfEducation}
+                                </Typography>
+                                <Typography variant="body1" style={styles.break}>
+                                    {item.institution}
+                                </Typography>
+                            </Grid>
                         </Grid>
-                        <Grid item style={styles.colSeperator} />
-                        <Grid item lg={8}>
-                            <Typography variant="h6" style={styles.bold}>
-                                {item.levelOfEducation}
-                            </Typography>
-                            <Typography variant="body1" style={styles.break}>
-                                {item.institution}
-                            </Typography>
-                        </Grid>
-                    </Grid>
-                ))}
-            </Grid>
-        </Container>
+                    ))}
+                </Grid>
+            </Container>
+        </Box>
     )
 }
 
